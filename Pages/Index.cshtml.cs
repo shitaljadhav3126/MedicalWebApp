@@ -66,20 +66,26 @@ namespace MedicalWebApp.Pages
         public async Task<IActionResult> OnPostAsync(string Name)
         {
             var Url = "https://azmedicalsystem.azurewebsites.net/api/medicine?";
-
+            
             dynamic content = new { Name = Name };
 
             CancellationToken cancellationToken;
+            
+            if (Name is null)
+            {
+                Url = "https://azmedicalsystem.azurewebsites.net/api/medicine?";;
+            }
+            else
+            {
+                 Url = "https://azmedicalsystem.azurewebsites.net/api/medicine/{name}?";
+            }
 
 
             using (var client = new HttpClient())
-            using (var request = new HttpRequestMessage(HttpMethod.Get, Url))
+            using (var request = new HttpRequestMessage(HttpMethod.Get, Url))            
             using (var httpContent = CreateHttpContent(content))
             {
-                request.Content = httpContent;
-
-                
-
+                request.Content = httpContent;             
 
                 //using (var response = await client
                 //    .SendAsync(request, HttpCompletionOption.ResponseHeadersRead, cancellationToken)

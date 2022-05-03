@@ -29,7 +29,13 @@
                             Location
                         </th>
                         <th>
-                            ProviderType
+                            Provider Type
+                        </th>
+                        <th>
+                            Store Name
+                        </th>
+                        <th>
+                            Batch ID
                         </th>
                     </tr>
                     @{ foreach (var item in lst)
@@ -39,6 +45,8 @@
                                 <td>@item.count</td>                            
                                 <td>@item.location</td>                            
                                 <td>@item.providertype</td>
+                                <td>@item.StoreName</td>
+                                <td>@item.BatchID</td>
                             </tr>
                         }
                     }

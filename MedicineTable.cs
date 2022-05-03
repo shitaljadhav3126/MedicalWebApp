@@ -12,5 +12,7 @@ namespace MedicalWebApp
         public int count { get; set; }
         public string location { get; set; }
         public string providertype { get; set; }
+         public string StoreName {get; set;}
+        public string BatchID {get; set;}
     }
 }
