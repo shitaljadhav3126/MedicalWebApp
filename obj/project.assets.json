@@ -53,11 +53,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Hackathon\\MedicalWebApp\\MedicalWebApp.csproj",
+      "projectUniqueName": "D:\\Hackathon\\Medical_AzureRepo\\MedicalWebApp\\MedicalWebApp.csproj",
       "projectName": "MedicalWebApp",
-      "projectPath": "D:\\Hackathon\\MedicalWebApp\\MedicalWebApp.csproj",
+      "projectPath": "D:\\Hackathon\\Medical_AzureRepo\\MedicalWebApp\\MedicalWebApp.csproj",
       "packagesPath": "C:\\Users\\jadhavshi\\.nuget\\packages\\",
-      "outputPath": "D:\\Hackathon\\MedicalWebApp\\obj\\",
+      "outputPath": "D:\\Hackathon\\Medical_AzureRepo\\MedicalWebApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jadhavshi\\AppData\\Roaming\\NuGet\\NuGet.Config",

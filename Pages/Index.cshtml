@@ -50,7 +50,16 @@
 
             <label for="Name">Medicine Name</label>
             <input type="text" id="Name" name="Name" placeholder="Drug Name" />
-            <input type="submit" />
+            <input type="submit" />            
         </form>
+        <div>            
+            <input type='button' value='Add' id='addButton' onClick='redirectOnClick()' />
+<script>
+function redirectOnClick(){
+    document.location ='/AddMedicine';
+}
+</script>
+
+        </div>
     </div>
 </div> 
