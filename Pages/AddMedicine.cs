@@ -65,7 +65,7 @@ namespace MedicalWebApp.Pages
 
         public async Task<IActionResult> OnPostAsync(string Name, string Count, string Location, string StoreName, string ProviderType, string BatchID)
         {
-            var Url = AppSettings.AddMedicine;
+            var Url = "https://azmedicalsystem.azurewebsites.net/api/medicine?";
 
             dynamic content = new { Name = Name, Location = Location, StoreName= StoreName, Count= Count, ProviderType= ProviderType, BatchID= BatchID };
             
