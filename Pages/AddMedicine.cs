@@ -15,11 +15,11 @@ using System.Threading.Tasks;
 
 namespace MedicalWebApp.Pages
 {
-    public class IndexModel : PageModel
+    public class AddMedicine : PageModel
     {
         private AppSettings AppSettings { get; set; }
 
-        public IndexModel(IOptions<AppSettings> settings)
+        public AddMedicine(IOptions<AppSettings> settings)
         {
             AppSettings = settings.Value;
         }
@@ -63,17 +63,18 @@ namespace MedicalWebApp.Pages
             return httpContent;
         }
 
-        public async Task<IActionResult> OnPostAsync(string Name)
+        public async Task<IActionResult> OnPostAsync(string Name, string Count, string Location, string StoreName, string ProviderType, string BatchID)
         {
-            var Url = AppSettings.GetAllMedicine;
+            var Url = AppSettings.AddMedicine;
 
-            dynamic content = new { Name = Name };
+            dynamic content = new { Name = Name, Location = Location, StoreName= StoreName, Count= Count, ProviderType= ProviderType, BatchID= BatchID };
+            
 
             CancellationToken cancellationToken;
 
 
             using (var client = new HttpClient())
-            using (var request = new HttpRequestMessage(HttpMethod.Get, Url))
+            using (var request = new HttpRequestMessage(HttpMethod.Post, Url))
             using (var httpContent = CreateHttpContent(content))
             {
                 request.Content = httpContent;
@@ -91,7 +92,7 @@ namespace MedicalWebApp.Pages
 
                     string resualtList = await (response.Content.ReadAsStringAsync());
                     //string responseBody = await response.Content.ReadAsStringAsync();
-                    List<MedicineTable> lst = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<List<MedicineTable>>(resualtList));
+                    //List<MedicineTable> lst = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<List<MedicineTable>>(resualtList));
                     //.ReadAsStringAsync();
                     //ReadAsAsync<List<MedicineTable>>();
 
