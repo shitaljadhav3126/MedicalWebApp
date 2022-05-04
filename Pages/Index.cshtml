@@ -19,34 +19,34 @@
             {
                 <table border="1">
                     <tr>
-                        <th>
+                        <th class="col-2">
                             Name
                         </th>
-                        <th>
+                        <th class="col-1">
                             Count
                         </th>
-                        <th>
+                        <th class="col-3">
                             Location
                         </th>
-                        <th>
+                        <th class="col-1">
                             Provider Type
                         </th>
-                        <th>
+                        <th class="col-3">
                             Store Name
                         </th>
-                        <th>
+                        <th class="col-2">
                             Batch ID
                         </th>
                     </tr>
                     @{ foreach (var item in lst)
                         {
                             <tr>
-                                <td>@item.name</td>                            
-                                <td>@item.count</td>                            
-                                <td>@item.location</td>                            
-                                <td>@item.providertype</td>
-                                <td>@item.StoreName</td>
-                                <td>@item.BatchID</td>
+                                <td class="col-2">@item.name</td>                            
+                                <td class="col-1">@item.count</td>                            
+                                <td class="col-3">@item.location</td>                            
+                                <td class="col-1">@item.providertype</td>
+                                <td class="col-3">@item.StoreName</td>
+                                <td class="col-2">@item.BatchID</td>
                             </tr>
                         }
                     }
@@ -57,7 +57,7 @@
         <form method="post">
 
             <label for="Name">Medicine Name</label>
-            <input type="text" id="Name" name="Name" placeholder="Drug Name" />
+            <input type="text" id="Name" name="Name" placeholder="Drug Name" class="col-5"/>
             <input type="submit" />            
         </form>
         <div>            
