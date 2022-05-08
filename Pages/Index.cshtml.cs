@@ -63,22 +63,30 @@ namespace MedicalWebApp.Pages
             return httpContent;
         }
 
-        public async Task<IActionResult> OnPostAsync(string Name)
+        public async Task<IActionResult> OnPostAsync(string Name, string BatchID)
         {
             var Url = "https://azmedicalsystem.azurewebsites.net/api/medicine?";
             
             dynamic content = new { Name = Name };
 
-            CancellationToken cancellationToken;
-            
-            if (Name is null)
+            CancellationToken cancellationToken;            
+
+            if (Name != null && BatchID != null )
             {
-                Url = "https://azmedicalsystem.azurewebsites.net/api/medicine?";;
+                Url = "https://azmedicalsystem.azurewebsites.net/api/medicinebynamebatchid/"+ Name +"/"+ BatchID +"?";
+            }
+            else if(Name != null && BatchID is null )
+            {
+                 Url = "https://azmedicalsystem.azurewebsites.net/api/medicinebyname/"+ Name +"?";                 
+            }
+            else if(Name is null && BatchID != null )
+            {
+                Url = "https://azmedicalsystem.azurewebsites.net/api/medicinebybatch/"+ BatchID +"?";                
             }
             else
             {
-                 Url = "https://azmedicalsystem.azurewebsites.net/api/medicine/{name}?";
-            }
+                Url = "https://azmedicalsystem.azurewebsites.net/api/medicine?";
+            }         
 
 
             using (var client = new HttpClient())

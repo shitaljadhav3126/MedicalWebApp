@@ -73,3 +73,4 @@ D:\Hackathon\Medical_AzureRepo\MedicalWebApp\obj\Debug\netcoreapp3.1\MedicalWebA
 D:\Hackathon\Medical_AzureRepo\MedicalWebApp\obj\Debug\netcoreapp3.1\MedicalWebApp.dll
 D:\Hackathon\Medical_AzureRepo\MedicalWebApp\obj\Debug\netcoreapp3.1\MedicalWebApp.pdb
 D:\Hackathon\Medical_AzureRepo\MedicalWebApp\obj\Debug\netcoreapp3.1\MedicalWebApp.genruntimeconfig.cache
+D:\Hackathon\Medical_AzureRepo\MedicalWebApp\obj\Debug\netcoreapp3.1\Razor\Pages\Login.cshtml.g.cs

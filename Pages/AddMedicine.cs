@@ -105,6 +105,7 @@ namespace MedicalWebApp.Pages
 
                     //ViewData["MedicineTable"] = lst;
 
+                    //return Page();
                     return Page();
                 }
             }
