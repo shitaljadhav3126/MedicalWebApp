@@ -33,6 +33,7 @@ namespace MedicalWebApp.Pages
 
         public void OnGet()
         {
+            ViewData["successmsg"]="";
 
         }
 
@@ -65,6 +66,7 @@ namespace MedicalWebApp.Pages
 
         public async Task<IActionResult> OnPostAsync(string Name, string Count, string Location, string StoreName, string ProviderType, string BatchID)
         {
+            ViewData["successmsg"]="";
             var Url = "https://azmedicalsystem.azurewebsites.net/api/medicine?";
 
             dynamic content = new { Name = Name, Location = Location, StoreName= StoreName, Count= Count, ProviderType= ProviderType, BatchID= BatchID };
@@ -96,17 +98,12 @@ namespace MedicalWebApp.Pages
                     //.ReadAsStringAsync();
                     //ReadAsAsync<List<MedicineTable>>();
 
-                    List<MedicineTable> emp = new List<MedicineTable>
-                    {
-                        new MedicineTable{},
-                        new MedicineTable{ }
-                    };
+                    ViewData["successmsg"] = "Record added successfully.";
 
-
-                    //ViewData["MedicineTable"] = lst;
-
-                    //return Page();
+                    //return Page();                    
+                    TempData["Username"]="admin";
                     return Page();
+                    //return RedirectToPage("Index", TempData["Username"]);
                 }
             }
 

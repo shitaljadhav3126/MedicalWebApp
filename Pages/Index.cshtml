@@ -10,6 +10,18 @@
 </div>*@
 
 <div class="row">
+    @*<div  class="col-12" style="padding-left: 80%;" >  
+        <input type='button' value="login" id='loginbutn' onClick='loginClick()' >          
+        <input type='button' value='Login As Admin' id='addButton' onClick='redirectOnClick()'/>
+        <script>
+        function redirectOnClick(){
+            document.location ='/AddMedicine';
+        }
+        function loginClick(){
+            document.location='/login'
+        }
+        </script>
+    </div>*@
     <div class="col-md-12">
         <hr />
         @{
@@ -57,19 +69,13 @@
         <form method="post">
 
             <label for="Name">Medicine Name</label>
-            <input type="text" id="Name" name="Name" placeholder="Medicine Name" class="col-5"/>
+            <input type="text" id="Name" name="Name" placeholder="Medicine Name" class="col-3"/>
             <label for="BatchId">Batch Id</label>
-            <input type="text" id="BatchId" name="BatchId" placeholder="Batch Id" class="col-5"/>
+            <input type="text" id="BatchId" name="BatchId" placeholder="Batch Id" class="col-3"/>
             <input type="submit" name="Search" />            
         </form>
-        <div>            
-            <input type='button' value='Login As Admin' id='addButton' onClick='redirectOnClick()' />
-<script>
-function redirectOnClick(){
-    document.location ='/AddMedicine';
-}
-</script>
-
+        <div>
+            
         </div>
     </div>
 </div> 
